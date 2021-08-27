@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve myproject
+After=network.target
+
+[Service]
+User=pi
+Group=www-data
+WorkingDirectory=/home/pi/locker_server
+Environment="PATH=/home/pi/locker_server/venv/bin"
+ExecStart=/home/pi/locker_server/venv/bin/uwsgi --ini app.ini
+
+[Install]
+WantedBy=multi-user.target

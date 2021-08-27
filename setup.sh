@@ -14,16 +14,16 @@ source /home/pi/locker_server/venv/bin/activate
 pip install -r requirements.txt
 
 
-cp controller_lockers.service /etc/systemd/system/
+cp locker_server.service /etc/systemd/system/
 
-systemctl start controller_lockers
+systemctl start locker_server
 
-systemctl enable controller_lockers
+systemctl enable locker_server
 
-systemctl status controller_lockers
+systemctl status locker_server
 
-mv controller_lockers.nginx.conf /etc/nginx/sites-available/controller_lockers
-ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+mv locker_server.nginx.conf /etc/nginx/sites-available/locker_server
+ln -s /etc/nginx/sites-available/locker_server /etc/nginx/sites-enabled
 
 nginx -t
 
