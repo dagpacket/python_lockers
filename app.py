@@ -7,7 +7,9 @@ class EmptySerialResponseException(Exception):
 SERIAL_PORT_NAME = '/dev/ttyS1'
 
 app = Flask(__name__)
-
+@app.route('/test', methods=['GET'])
+def test():
+    return jsonify({'test':1}) 
 @app.route('/weight_machine/weigh', methods=['GET'])
 def welcome():
     try:
