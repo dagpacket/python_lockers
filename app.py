@@ -13,7 +13,7 @@ def test():
 @app.route('/weight_machine/weigh', methods=['GET'])
 def welcome():
     try:
-        time.sleep(10)
+        time.sleep(4)
         thisdict = {
             "status": "success",
             "response": {
